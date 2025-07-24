@@ -1,0 +1,121 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #f5f5f5;
+}
+#game {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 320px;
+}
+#tridle-container {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 30px 0 20px 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+.game-grid {
+  display: grid;
+  grid-template-rows: repeat(6, 60px);
+  grid-template-columns: repeat(5, 60px);
+  gap: 5px;
+  background: #e0e0e0;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  min-width: 320px;
+  max-width: 340px;
+}
+@media (max-width: 1100px) {
+  #tridle-container {
+    gap: 16px;
+  }
+  .game-grid {
+    min-width: 260px;
+    max-width: 270px;
+    padding: 5px;
+  }
+}
+@media (max-width: 900px) {
+  #tridle-container {
+    gap: 8px;
+  }
+  .game-grid {
+    min-width: 180px;
+    max-width: 200px;
+    padding: 2px;
+  }
+  .tile, .box {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+#input-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#input {
+  font-size: 24px;
+  width: 120px;
+  text-align: center;
+  padding: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+}
+#proveriBtn, #resetBtn {
+  font-size: 16px;
+  padding: 7px 18px;
+  border-radius: 6px;
+  border: none;
+  background: #6aaa64;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#resetBtn {
+  background: #b22222;
+}
+#proveriBtn:hover {
+  background: #538d4e;
+}
+#resetBtn:hover {
+  background: #8b1818;
+}
+.tile, .box {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ccc;
+  font-size: 28px;
+  line-height: 60px;
+  text-transform: uppercase;
+  background-color: white;
+  border-radius: 8px;
+  font-family: 'Monospace', monospace;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.correct {
+  background-color: #6aaa64;
+  color: white;
+}
+.present {
+  background-color: #c9b458;
+  color: white;
+}
+.absent {
+  background-color: #787c7e;
+  color: white;
+}

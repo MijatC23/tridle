@@ -14,49 +14,56 @@ body {
 #tridle-container {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  align-items: flex-start;
+  gap: 2vw;
   margin: 30px 0 20px 0;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; /* Nema skrola */
   padding-bottom: 10px;
 }
 .game-grid {
   display: grid;
-  grid-template-rows: repeat(6, 60px);
-  grid-template-columns: repeat(5, 60px);
-  gap: 5px;
-  background: #e0e0e0;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  min-width: 320px;
-  max-width: 340px;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5vw;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: 18vw;
+  min-width: 90px;
+  max-width: 180px;
+  aspect-ratio: 5/6;
+}
+.game-grid:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
 }
 @media (max-width: 1100px) {
   #tridle-container {
-    gap: 16px;
+    gap: 24px;
   }
   .game-grid {
-    min-width: 260px;
-    max-width: 270px;
-    padding: 5px;
+    min-width: 150px;
+    max-width: 150px;
+    padding: 10px 4px;
+    margin: 0 8px;
   }
 }
 @media (max-width: 900px) {
   #tridle-container {
-    gap: 8px;
+    gap: 12px;
   }
   .game-grid {
-    min-width: 180px;
-    max-width: 200px;
-    padding: 2px;
+    width: 28vw;
+    min-width: 60px;
+    max-width: 100px;
+    padding: 0;
+    border-radius: 0;
   }
   .tile, .box {
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 2.5vw;
+    border-radius: 1.5vw;
   }
 }
 #input-panel {
@@ -95,17 +102,20 @@ body {
   background: #8b1818;
 }
 .tile, .box {
-  width: 60px;
-  height: 60px;
-  border: 2px solid #ccc;
-  font-size: 28px;
-  line-height: 60px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  font-size: 1.2vw;
+  min-font-size: 10px;
+  max-font-size: 22px;
+  border-radius: 0.7vw;
+  border: 1.5px solid #d0d0d0;
+  background: #fafbfc;
   text-transform: uppercase;
-  background-color: white;
-  border-radius: 8px;
   font-family: 'Monospace', monospace;
   font-weight: bold;
-  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .correct {
   background-color: #6aaa64;

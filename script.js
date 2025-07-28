@@ -18,16 +18,13 @@ const FeedBack = {
 
 // Load words and initialize game
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Pokušavam da fetch-ujem reci5.txt...');
   fetch('reci5.txt')
     .then(res => {
-      console.log('Fetch response:', res);
       if (!res.ok) throw new Error('Neuspešan fetch reci5.txt');
       return res.text();
     })
     .then(text => {
       reci = text.trim().split(/\r?\n/).map(r => r.trim().toLowerCase());
-      console.log('Učitano reči:', reci.length, reci.slice(0, 10));
       startGame();
     })
     .catch(err => {
@@ -79,7 +76,6 @@ function inicijalizujTablu() {
 function proveriUnos() {
   const input = document.getElementById('input');
   const unos = input.value.trim().toLowerCase();
-  console.log('Unos:', unos, '| Tajne:', trazene, '| Pokusaj:', pokusaj);
   if (unos.length !== REC_DUZINA || !reci.includes(unos)) {
     alert(`Reč mora imati ${REC_DUZINA} slova i postojati u rečniku.`);
     return;
